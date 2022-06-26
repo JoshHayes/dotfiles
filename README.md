@@ -6,19 +6,38 @@ Swap should be as big as RAM
 
 ## Setup
 
-Solaar for Logi Options replacement
-
-Enable Large Text under Accessibility settings if your monitor DPI is funny
-
-zsh and oh-my-zsh 
-
-FiraCode font with litigatures
+Enable Large Text under Accessibility settings if your monitor DPI is funny.
+Recover backspace-to-go-back in Firefox by setting `browser.backspace_action` to 0 under `about:config`.
 
 ```bash
-sudo apt install fonts-firacode
-```
+# Solaar for Logi Options replacement
+sudo apt install solaar
 
-~~Meslo font from NerdFonts~~
+# FiraCode font with litigatures
+sudo apt install fonts-firacode
+
+# zsh and oh-my-zsh 
+sudo apt install zsh
+chsh -s $(which zsh)    # remember to logout
+
+# Bitwarden
+# TODO
+
+# Chezmoi
+curl -sfL https://git.io/chezmoi | sh
+sudo mv ./bin/chezmoi /usr/local/bin/
+
+# Run chezmoi
+chezmoi init JoshHayes
+chezmoi apply
+
+cd $(chezmoi source-path)
+git remote set-url origin git@github.com:JoshHayes/dotfiles.git
+
+
+
+
+```
 
 Dropbox 
 
